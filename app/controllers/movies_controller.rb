@@ -17,20 +17,21 @@ class MoviesController < ApplicationController
 		if @movie.save
 			redirect_to movie_path(@movie)
 		else
-			render :new, :status :see_ot
+			render :new, :status :see_other
 		end
 	end
 
 	def edit
-		
 	end
 
 	def update
-		
+		@movie.update
+		redirect_to movie_path
 	end
 
 	def destroy
-		
+		@movie.destroy
+		redirect_to movie_path
 	end
 
 	private
