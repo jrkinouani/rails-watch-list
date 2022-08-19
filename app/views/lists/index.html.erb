@@ -1,8 +1,24 @@
-<h1>pages index</h1>
-<%  @lists.each do | list| %>
-	<li>
-	<%= link_to list.name, list_path(list) %>
-	
-	</li>
-<% end %>
-<%=  link_to 'add new list', new_list_path, class: "btn btn-primary" %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container text-center">
+    <h1>Créer les meilleures listes de films </h1>
+    <a class="btn btn-primary mt-5" href="#">Apply now</a>
+  </div>
+</div>
+
+<div class="container mt-5">
+	<div class="row pb-3">
+		<div class="col-6 d-flex justify-content-start">
+			<h2>My list</h2>
+		</div>
+		<div class="col-6 d-flex justify-content-end">
+       	<%= link_to 'add new list', new_list_path, class: "btn btn-primary" %>
+       </div>
+	</div>
+ <div class="cards">
+   <%  @lists.each do | list| %>
+	  <div class="card-category" style="background-image: url('https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1159&q=80')">
+		<%= link_to list.name, list_path(list), class:"link_index" %>
+	  </div>
+   <% end %>
+ </div>
+</div>
